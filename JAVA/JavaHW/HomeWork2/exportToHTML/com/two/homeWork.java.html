@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>homeWork.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #808080;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+homeWork.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.two</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Random</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">homeWork {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s1">Scanner in = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;All set. Get ready to rumble!&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<span class="s3">//        while (matrixA[line][col] != matrixA[rnd_line][rnd_col]) {</span>
+        <span class="s1">System.out.print (</span><span class="s2">&quot;Enter line number: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">line = in.nextInt()</span><span class="s0">;</span>
+        <span class="s1">System.out.print(</span><span class="s2">&quot;Enter column number: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">col = in.nextInt()</span><span class="s0">;</span>
+
+        <span class="s1">in.close()</span><span class="s0">;</span>
+        <span class="s0">final int </span><span class="s1">min = </span><span class="s4">5</span><span class="s0">;</span>
+        <span class="s0">final int </span><span class="s1">max = </span><span class="s4">5</span><span class="s0">;</span>
+        <span class="s0">final int </span><span class="s1">rnd_line = rnd_line(min</span><span class="s0">, </span><span class="s1">max)</span><span class="s0">;</span>
+        <span class="s0">final int </span><span class="s1">rnd_col = rnd_col(min</span><span class="s0">, </span><span class="s1">max)</span><span class="s0">;</span>
+        <span class="s1">String[][] matrixA = </span><span class="s0">new </span><span class="s1">String[</span><span class="s4">6</span><span class="s1">][</span><span class="s4">6</span><span class="s1">]</span><span class="s0">;</span>
+            <span class="s0">if </span><span class="s1">(matrixA[line][col] == matrixA[rnd_line][rnd_col]) {</span>
+                <span class="s1">matrixA[line][col] = </span><span class="s2">&quot;X&quot;</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(matrixA[line][col] != matrixA[rnd_line][rnd_col]) {</span>
+                <span class="s1">matrixA[line][col] = </span><span class="s2">&quot;*&quot;</span><span class="s0">;</span>
+            <span class="s1">}</span>
+
+            <span class="s1">matrixA[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">0</span><span class="s1">] = </span><span class="s2">&quot;0&quot;</span><span class="s0">;</span>
+            <span class="s1">matrixA[</span><span class="s4">1</span><span class="s1">][</span><span class="s4">0</span><span class="s1">] = </span><span class="s2">&quot;1&quot;</span><span class="s0">;</span>
+            <span class="s1">matrixA[</span><span class="s4">2</span><span class="s1">][</span><span class="s4">0</span><span class="s1">] = </span><span class="s2">&quot;2&quot;</span><span class="s0">;</span>
+            <span class="s1">matrixA[</span><span class="s4">3</span><span class="s1">][</span><span class="s4">0</span><span class="s1">] = </span><span class="s2">&quot;3&quot;</span><span class="s0">;</span>
+            <span class="s1">matrixA[</span><span class="s4">4</span><span class="s1">][</span><span class="s4">0</span><span class="s1">] = </span><span class="s2">&quot;4&quot;</span><span class="s0">;</span>
+            <span class="s1">matrixA[</span><span class="s4">5</span><span class="s1">][</span><span class="s4">0</span><span class="s1">] = </span><span class="s2">&quot;5&quot;</span><span class="s0">;</span>
+            <span class="s1">matrixA[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">1</span><span class="s1">] = </span><span class="s2">&quot;1&quot;</span><span class="s0">;</span>
+            <span class="s1">matrixA[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">2</span><span class="s1">] = </span><span class="s2">&quot;2&quot;</span><span class="s0">;</span>
+            <span class="s1">matrixA[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">3</span><span class="s1">] = </span><span class="s2">&quot;3&quot;</span><span class="s0">;</span>
+            <span class="s1">matrixA[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">4</span><span class="s1">] = </span><span class="s2">&quot;4&quot;</span><span class="s0">;</span>
+            <span class="s1">matrixA[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">5</span><span class="s1">] = </span><span class="s2">&quot;5&quot;</span><span class="s0">;</span>
+
+            <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; </span><span class="s4">6</span><span class="s0">; </span><span class="s1">i++) {</span>
+                <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">j = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">j &lt; </span><span class="s4">6</span><span class="s0">; </span><span class="s1">j++) {</span>
+                    <span class="s0">if </span><span class="s1">(matrixA[i][j] == </span><span class="s0">null</span><span class="s1">) {</span>
+                        <span class="s1">matrixA[i][j] = </span><span class="s2">&quot;-&quot;</span><span class="s0">;</span>
+                    <span class="s1">}</span>
+                    <span class="s1">System.out.print(matrixA[i][j] + </span><span class="s2">&quot; | &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s1">System.out.println()</span><span class="s0">;</span>
+
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(matrixA[line][col] == matrixA[rnd_line][rnd_col]) {</span>
+
+                <span class="s1">System.out.print(</span><span class="s2">&quot;You have won!&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+<span class="s3">//    }</span>
+    <span class="s0">public static int </span><span class="s1">rnd_line(</span><span class="s0">int </span><span class="s1">min</span><span class="s0">, int </span><span class="s1">max)</span>
+    <span class="s1">{</span>
+        <span class="s1">max -= min</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">(</span><span class="s0">int</span><span class="s1">) (Math.random() * ++max) + min</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public static int </span><span class="s1">rnd_col(</span><span class="s0">int </span><span class="s1">min</span><span class="s0">, int </span><span class="s1">max)</span>
+    <span class="s1">{</span>
+        <span class="s1">max -= min</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">(</span><span class="s0">int</span><span class="s1">) (Math.random() * ++max) + min</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
