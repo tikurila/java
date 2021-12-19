@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.four.homeWork</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Main {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+
+        <span class="s1">Human father = </span><span class="s0">new </span><span class="s1">Human(</span><span class="s2">&quot;Sergei&quot;</span><span class="s0">, </span><span class="s2">&quot;Popov&quot;</span><span class="s0">, </span><span class="s3">1960</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Human mother = </span><span class="s0">new </span><span class="s1">Human(</span><span class="s2">&quot;Svetlana&quot;</span><span class="s0">, </span><span class="s2">&quot;Popova&quot;</span><span class="s0">, </span><span class="s3">1963</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Pet pet = </span><span class="s0">new </span><span class="s1">Pet(</span><span class="s2">&quot;dog&quot;</span><span class="s0">, </span><span class="s2">&quot;Dean&quot;</span><span class="s0">, </span><span class="s3">2</span><span class="s0">, </span><span class="s3">85</span><span class="s0">, </span><span class="s2">&quot;eat&quot;</span><span class="s0">, </span><span class="s2">&quot;sleep&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Human son1 = </span><span class="s0">new </span><span class="s1">Human(</span><span class="s2">&quot;Roma&quot;</span><span class="s0">, </span><span class="s2">&quot;Popov&quot;</span><span class="s0">, </span><span class="s3">1990</span><span class="s0">, </span><span class="s3">120</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Human son2 = </span><span class="s0">new </span><span class="s1">Human(</span><span class="s2">&quot;Andrey&quot;</span><span class="s0">, </span><span class="s2">&quot;Popov&quot;</span><span class="s0">, </span><span class="s3">2010</span><span class="s0">, </span><span class="s3">60</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Human son3 = </span><span class="s0">new </span><span class="s1">Human(</span><span class="s2">&quot;Vladimir&quot;</span><span class="s0">, </span><span class="s2">&quot;Popov&quot;</span><span class="s0">, </span><span class="s3">2000</span><span class="s0">, </span><span class="s3">95</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Human son4 = </span><span class="s0">new </span><span class="s1">Human(</span><span class="s2">&quot;Slavik&quot;</span><span class="s0">, </span><span class="s2">&quot;Popov&quot;</span><span class="s0">, </span><span class="s3">1983</span><span class="s0">, </span><span class="s3">50</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">Family family1 = </span><span class="s0">new </span><span class="s1">Family(mother</span><span class="s0">, </span><span class="s1">father)</span><span class="s0">;</span>
+        <span class="s1">family1.addChild(son1)</span><span class="s0">;</span>
+        <span class="s1">family1.addChild(son2)</span><span class="s0">;</span>
+        <span class="s1">family1.addChild(son3)</span><span class="s0">;</span>
+        <span class="s1">family1.addChild(son4)</span><span class="s0">;</span>
+
+        <span class="s1">family1.deleteChild(</span><span class="s3">1</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">family1.deleteChild(</span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">family1.deleteChild(</span><span class="s3">2</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">family1.setPet(pet)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(family1.countFamily())</span><span class="s0">;</span>
+
+        <span class="s1">family1.toString()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
