@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>HumanTest.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+HumanTest.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.seven.Test</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">com.seven.homeWork.Human</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.junit.jupiter.api.DisplayName</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.junit.jupiter.api.Test</span><span class="s0">;</span>
+
+<span class="s0">import static </span><span class="s1">org.junit.jupiter.api.Assertions.assertEquals</span><span class="s0">;</span>
+<span class="s0">import static </span><span class="s1">org.junit.jupiter.api.Assertions.assertNull</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">HumanTest {</span>
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">testToString() {</span>
+        <span class="s1">Human human = </span><span class="s0">new </span><span class="s1">Human(</span><span class="s2">&quot;TestName&quot;</span><span class="s0">, </span><span class="s2">&quot;TestSurname&quot;</span><span class="s0">, </span><span class="s3">1970</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">assertEquals(</span><span class="s2">&quot;Human{name='TestName', surname='TestSurname', year=1970}&quot;</span><span class="s0">, </span><span class="s1">human.toString())</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s1">@DisplayName(</span><span class="s2">&quot;Test for null&quot;</span><span class="s1">)</span>
+    <span class="s0">void </span><span class="s1">testNull() {</span>
+        <span class="s1">Human human = </span><span class="s0">new </span><span class="s1">Human()</span><span class="s0">;</span>
+        <span class="s1">assertNull(human.getFamily())</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>
