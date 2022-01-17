@@ -1,0 +1,223 @@
+<html>
+<head>
+<title>ConsoleApp.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+.s4 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ConsoleApp.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.nine.homework</span><span class="s0">;</span>
+
+
+<span class="s0">import </span><span class="s1">java.text.ParseException</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.HashSet</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Set</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">ConsoleApp {</span>
+    <span class="s0">private </span><span class="s1">FamilyController familyController = </span><span class="s0">new </span><span class="s1">FamilyController()</span><span class="s0">;</span>
+    <span class="s0">private static final </span><span class="s1">Scanner SCANNER = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+    <span class="s0">private static final </span><span class="s1">String REG_MENU = </span><span class="s2">&quot;[1-9]&quot;</span><span class="s0">;</span>
+    <span class="s0">private static final </span><span class="s1">String REG_SUBMENU = </span><span class="s2">&quot;[1-3]&quot;</span><span class="s0">;</span>
+    <span class="s0">private static final </span><span class="s1">String REG_NUM = </span><span class="s2">&quot;([0-9])+&quot;</span><span class="s0">;</span>
+    <span class="s0">private static final </span><span class="s1">String REG_STR = </span><span class="s2">&quot;</span><span class="s0">\\</span><span class="s2">D+&quot;</span><span class="s0">;</span>
+    <span class="s0">private static final </span><span class="s1">String REG_YEAR = </span><span class="s2">&quot;([0-9]){4}&quot;</span><span class="s0">;</span>
+    <span class="s0">private static final </span><span class="s1">String REG_MONS = </span><span class="s2">&quot;(1[0-2]|0[1-9])&quot;</span><span class="s0">;</span>
+    <span class="s0">private static final </span><span class="s1">String REG_DAY = </span><span class="s2">&quot;((1)[0-9]|(2)[0-9]|0[1-9]|3[0-1])&quot;</span><span class="s0">;</span>
+    <span class="s0">private static final </span><span class="s1">String REG_IQ = </span><span class="s2">&quot;([0-9]|[1-8][0-9]|9[0-9]|1[0-5][0-9]|160)&quot;</span><span class="s0">;</span>
+    <span class="s0">private static final </span><span class="s1">String REG_GEN = </span><span class="s2">&quot;[(m|w),(W|M)]&quot;</span><span class="s0">;</span>
+
+
+    <span class="s0">public void </span><span class="s1">genTestData() </span><span class="s0">throws </span><span class="s1">ParseException {</span>
+        <span class="s1">Pet dog = </span><span class="s0">new </span><span class="s1">Dog(</span><span class="s2">&quot;Jim&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">dog.setAge(</span><span class="s3">15</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">dog.setTrickLevel(</span><span class="s3">25</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Set&lt;String&gt; habitsOfDog = </span><span class="s0">new </span><span class="s1">HashSet&lt;&gt;()</span><span class="s0">;</span>
+        <span class="s1">habitsOfDog.add(</span><span class="s2">&quot;sleep&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">habitsOfDog.add(</span><span class="s2">&quot;eat&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">habitsOfDog.add(</span><span class="s2">&quot;code&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">dog.setHabits(habitsOfDog)</span><span class="s0">;</span>
+
+        <span class="s1">Pet cat = </span><span class="s0">new </span><span class="s1">DomesticCat(</span><span class="s2">&quot;Tom&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">cat.setAge(</span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">cat.setTrickLevel(</span><span class="s3">80</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Set&lt;String&gt; habitsOfCat = </span><span class="s0">new </span><span class="s1">HashSet&lt;&gt;()</span><span class="s0">;</span>
+        <span class="s1">habitsOfCat.add(</span><span class="s2">&quot;run&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">habitsOfCat.add(</span><span class="s2">&quot;play&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">habitsOfCat.add(</span><span class="s2">&quot;sleep&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">cat.setHabits(habitsOfCat)</span><span class="s0">;</span>
+
+        <span class="s4">// Kari family</span>
+        <span class="s1">Woman motherKari = </span><span class="s0">new </span><span class="s1">Woman(</span><span class="s2">&quot;Karina&quot;</span><span class="s0">, </span><span class="s2">&quot;Popova&quot;</span><span class="s0">, </span><span class="s2">&quot;2004/05/25&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">motherKari.setIq(</span><span class="s3">65</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Man fatherKari = </span><span class="s0">new </span><span class="s1">Man(</span><span class="s2">&quot;Sergei&quot;</span><span class="s0">, </span><span class="s2">&quot;Popov&quot;</span><span class="s0">, </span><span class="s2">&quot;1970/04/02&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">fatherKari.setIq(</span><span class="s3">75</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Family familyKari = </span><span class="s0">new </span><span class="s1">Family(fatherKari</span><span class="s0">, </span><span class="s1">motherKari)</span><span class="s0">;</span>
+
+        <span class="s4">// Imeno family</span>
+        <span class="s1">Man fatherImeno = </span><span class="s0">new </span><span class="s1">Man(</span><span class="s2">&quot;Semen&quot;</span><span class="s0">, </span><span class="s2">&quot;Idol&quot;</span><span class="s0">, </span><span class="s2">&quot;1981/02/10&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">fatherImeno.setIq(</span><span class="s3">75</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Woman motherImeno = </span><span class="s0">new </span><span class="s1">Woman(</span><span class="s2">&quot;Kate&quot;</span><span class="s0">, </span><span class="s2">&quot;Idol&quot;</span><span class="s0">, </span><span class="s2">&quot;1983/01/20&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">motherImeno.setIq(</span><span class="s3">65</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Family familyImeno = </span><span class="s0">new </span><span class="s1">Family(fatherImeno</span><span class="s0">, </span><span class="s1">motherImeno)</span><span class="s0">;</span>
+
+        <span class="s4">//family Watson</span>
+        <span class="s1">Man fatherWatson = </span><span class="s0">new </span><span class="s1">Man(</span><span class="s2">&quot;John&quot;</span><span class="s0">, </span><span class="s2">&quot;Perry&quot;</span><span class="s0">, </span><span class="s2">&quot;1980/05/12&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">fatherWatson.setIq(</span><span class="s3">75</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Woman motherWatson = </span><span class="s0">new </span><span class="s1">Woman(</span><span class="s2">&quot;Dina&quot;</span><span class="s0">, </span><span class="s2">&quot;Perry&quot;</span><span class="s0">, </span><span class="s2">&quot;1985/06/14&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">motherWatson.setIq(</span><span class="s3">65</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Family familyWatson = </span><span class="s0">new </span><span class="s1">Family(fatherWatson</span><span class="s0">, </span><span class="s1">motherWatson)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">printCommandList() {</span>
+        <span class="s1">System.out.print(</span><span class="s2">&quot;LIST OF COMMANDS</span><span class="s0">\n\n</span><span class="s2">- 1. TO FILL TEST DATA</span><span class="s0">\n</span><span class="s2">- 2. Показать весь список семьи:</span><span class="s0">\n</span><span class="s2">- 3. Показать список семьи, где количество людей больше данного числа:</span><span class="s0">\n</span><span class="s2">- 4. Показать список семьи, где количество людей меньше данного числа:</span><span class="s0">\n</span><span class="s2">- 5. Показать список семьи, где количество людей равны данному числу:</span><span class="s0">\n</span><span class="s2">- 6. Создать новую семью:</span><span class="s0">\n</span><span class="s2">- 7. Удалить семью по симейному индексу в общем списке:</span><span class="s0">\n</span><span class="s2">- 8.Редактировать семью по симейному индексу в общем списке:</span><span class="s0">\n</span><span class="s2">- 9. Удалить детей старше такого-то возраста:</span><span class="s0">\n\n </span><span class="s2">Если вы не нарушаете программу нажмите Exit</span><span class="s0">\n\n</span><span class="s2">Конец списка программ&quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">printCase8() {</span>
+        <span class="s1">System.out.print(</span><span class="s2">&quot;- 8. EDIT FAMILY BY FAMILY INDEX IN THE GENERAL LIST:</span><span class="s0">\n   </span><span class="s2">- 1. Born a child:</span><span class="s0">\n   </span><span class="s2">- 2. Adopt a child:</span><span class="s0">\n   </span><span class="s2">- 3. Return to main menu.</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s0">private </span><span class="s1">String validInput(String regex</span><span class="s0">, </span><span class="s1">String printInfo) {</span>
+        <span class="s1">String string = SCANNER.nextLine()</span><span class="s0">;</span>
+        <span class="s0">while </span><span class="s1">(!string.matches(regex) &amp;&amp; !string.equalsIgnoreCase(</span><span class="s2">&quot;exit&quot;</span><span class="s1">)) {</span>
+            <span class="s1">System.out.print(</span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">WRONG DATA -&gt; &quot; </span><span class="s1">+ string)</span><span class="s0">;</span>
+            <span class="s1">System.out.print(printInfo)</span><span class="s0">;</span>
+            <span class="s1">string = SCANNER.nextLine()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">return </span><span class="s1">string.toUpperCase()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s0">public void </span><span class="s1">runApplication() </span><span class="s0">throws </span><span class="s1">ParseException {</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;</span><span class="s0">\t\t</span><span class="s2">Console App</span><span class="s0">\t\t</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">String command = </span><span class="s0">null;</span>
+        <span class="s0">do </span><span class="s1">{</span>
+            <span class="s1">printCommandList()</span><span class="s0">;</span>
+            <span class="s1">System.out.print(</span><span class="s2">&quot;Please enter number of command: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s0">try </span><span class="s1">{</span>
+                <span class="s0">switch </span><span class="s1">(command = validInput(</span><span class="s2">&quot;[1-9]&quot;</span><span class="s0">, </span><span class="s2">&quot;Enter a command [1-9]: &quot;</span><span class="s1">)) {</span>
+                    <span class="s0">case </span><span class="s2">&quot;1&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Test data generated.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">genTestData()</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+                    <span class="s0">case </span><span class="s2">&quot;2&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;List of all the families:&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">familyController.displayAllFamilies()</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+                    <span class="s0">case </span><span class="s2">&quot;3&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Display a list of families where the number of people is greater than the specified number&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s0">int </span><span class="s1">numBig = Integer.parseInt(validInput(REG_NUM</span><span class="s0">, </span><span class="s2">&quot;Enter a number: &quot;</span><span class="s1">))</span><span class="s0">;</span>
+                        <span class="s1">familyController.getFamiliesBiggerThan(numBig)</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+                    <span class="s0">case </span><span class="s2">&quot;4&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Display a list of families where the number of people is less than the specified number&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s0">int </span><span class="s1">numSmall = Integer.parseInt(validInput(REG_NUM</span><span class="s0">, </span><span class="s2">&quot;Enter a number: &quot;</span><span class="s1">))</span><span class="s0">;</span>
+                        <span class="s1">familyController.getFamiliesLessThan(numSmall)</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+                    <span class="s0">case </span><span class="s2">&quot;5&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Calculate the number of families where the number of members is&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s0">int </span><span class="s1">numEqual = Integer.parseInt(validInput(REG_NUM</span><span class="s0">, </span><span class="s2">&quot;Enter a number: &quot;</span><span class="s1">))</span><span class="s0">;</span>
+                        <span class="s1">familyController.countFamiliesWithMemberNumber(numEqual)</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+                    <span class="s0">case </span><span class="s2">&quot;6&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Create a new family&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.print(</span><span class="s2">&quot;- 6. CREATE A NEW FAMILY:</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+                        <span class="s1">String nameF = validInput(REG_STR</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- Enter father's name: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">String surnameF = validInput(REG_STR</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- Enter father's surname: </span><span class="s0">\&quot;</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">String yearF = validInput(REG_YEAR</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- Enter father's birth year: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">String monthF = validInput(REG_MONS</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- Enter father's birth month: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">String dayF = validInput(REG_DAY</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- Enter father's birth day: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s0">int </span><span class="s1">iqF = Integer.parseInt(validInput(REG_IQ</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- Enter father's iq: &quot;</span><span class="s1">))</span><span class="s0">;</span>
+                        <span class="s1">String birthDateF = String.format(</span><span class="s2">&quot;%d/%d/%d&quot;</span><span class="s0">, </span><span class="s1">Integer.parseInt(dayF)</span><span class="s0">, </span><span class="s1">Integer.parseInt(monthF)</span><span class="s0">, </span><span class="s1">Integer.parseInt(yearF))</span><span class="s0">;</span>
+                        <span class="s1">Human father = </span><span class="s0">new </span><span class="s1">Man(nameF</span><span class="s0">, </span><span class="s1">surnameF</span><span class="s0">, </span><span class="s1">birthDateF</span><span class="s0">, </span><span class="s1">iqF)</span><span class="s0">;</span>
+
+                        <span class="s1">String nameM = validInput(REG_STR</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- enter mother's name: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">String surnameM = validInput(REG_STR</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- enter mother's surname: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">String yearM = validInput(REG_YEAR</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- enter mother's birth year: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">String monthM = validInput(REG_MONS</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- enter mother's birth month: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">String dayM = validInput(REG_DAY</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- enter mother's birth day: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s0">int </span><span class="s1">iqM = Integer.parseInt(validInput(REG_IQ</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- enter mother's iq: &quot;</span><span class="s1">))</span><span class="s0">;</span>
+                        <span class="s1">String birthDateM = String.format(</span><span class="s2">&quot;%d/%d/%d&quot;</span><span class="s0">, </span><span class="s1">Integer.parseInt(dayM)</span><span class="s0">, </span><span class="s1">Integer.parseInt(monthM)</span><span class="s0">, </span><span class="s1">Integer.parseInt(yearM))</span><span class="s0">;</span>
+                        <span class="s1">Human mother = </span><span class="s0">new </span><span class="s1">Woman(nameM</span><span class="s0">, </span><span class="s1">surnameM</span><span class="s0">, </span><span class="s1">birthDateM</span><span class="s0">, </span><span class="s1">iqM)</span><span class="s0">;</span>
+
+                        <span class="s1">familyController.createNewFamily(mother</span><span class="s0">, </span><span class="s1">father)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;New family created.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+                    <span class="s0">case </span><span class="s2">&quot;7&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Delete a family by its index in the general list&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s0">int </span><span class="s1">familyId = Integer.parseInt(validInput(REG_NUM</span><span class="s0">, </span><span class="s2">&quot;Enter family id&quot;</span><span class="s1">))</span><span class="s0">;</span>
+                        <span class="s1">familyController.deleteFamilyByIndex(familyId)</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+                    <span class="s0">case </span><span class="s2">&quot;8&quot;</span><span class="s1">:</span>
+                        <span class="s1">printCase8()</span><span class="s0">;</span>
+                        <span class="s1">String subCommand = validInput(REG_SUBMENU</span><span class="s0">, </span><span class="s2">&quot;Enter sub-menu number:&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s0">if </span><span class="s1">(subCommand.equals(</span><span class="s2">&quot;1&quot;</span><span class="s1">)) {</span>
+                            <span class="s1">System.out.print(</span><span class="s2">&quot;1. Born a child</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                            <span class="s0">int </span><span class="s1">fId = Integer.parseInt(validInput(REG_NUM</span><span class="s0">, </span><span class="s2">&quot;Enter family index(ID): &quot;</span><span class="s1">))</span><span class="s0">;</span>
+                            <span class="s0">try </span><span class="s1">{</span>
+                                <span class="s1">Family family = familyController.getAllFamilies().get(fId - </span><span class="s3">1</span><span class="s1">)</span><span class="s0">;</span>
+                                <span class="s1">System.out.print(</span><span class="s2">&quot;Enter the necessary data (boy's name, girl's name)</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                                <span class="s1">String boyName = validInput(REG_STR</span><span class="s0">, </span><span class="s2">&quot;Name of son: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                                <span class="s1">String girlName = validInput(REG_STR</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- name of daughter: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                                <span class="s1">familyController.bornChild(family</span><span class="s0">, </span><span class="s1">boyName</span><span class="s0">, </span><span class="s1">girlName)</span><span class="s0">;</span>
+                            <span class="s1">} </span><span class="s0">catch </span><span class="s1">(IndexOutOfBoundsException e) {</span>
+                                <span class="s1">System.out.printf(</span><span class="s2">&quot;Family by %d not presented</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s0">, </span><span class="s1">fId)</span><span class="s0">;</span>
+                            <span class="s1">}</span>
+                        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(subCommand.equals(</span><span class="s2">&quot;2&quot;</span><span class="s1">)) {</span>
+                            <span class="s1">System.out.print(</span><span class="s2">&quot;1. Adopt a child</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                            <span class="s0">int </span><span class="s1">fId = Integer.parseInt(validInput(REG_NUM</span><span class="s0">, </span><span class="s2">&quot;Enter family index(ID): &quot;</span><span class="s1">))</span><span class="s0">;</span>
+                            <span class="s0">try </span><span class="s1">{</span>
+                                <span class="s1">Family family = familyController.getAllFamilies().get(fId - </span><span class="s3">1</span><span class="s1">)</span><span class="s0">;</span>
+                                <span class="s1">System.out.print(</span><span class="s2">&quot;</span><span class="s0">\t</span><span class="s2">- enter the gender of child (M - man, W - woman): &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                                <span class="s1">String gender = validInput(REG_GEN</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- enter the gender of child (M - man, W - woman): &quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+                                <span class="s0">boolean </span><span class="s1">gen = gender.toLowerCase().trim().equalsIgnoreCase(</span><span class="s2">&quot;m&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+                                <span class="s1">String name = validInput(REG_STR</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- enter the name of child: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                                <span class="s1">String year = validInput(REG_YEAR</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- enter the year of birthday child: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                                <span class="s1">String month = validInput(REG_MONS</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- enter the month of birthday child: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                                <span class="s1">String day = validInput(REG_DAY</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- enter the day of birthday child: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                                <span class="s0">int </span><span class="s1">iq = Integer.parseInt(validInput(REG_IQ</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- enter the IQ of child: &quot;</span><span class="s1">))</span><span class="s0">;</span>
+
+                                <span class="s0">if </span><span class="s1">(gen) {</span>
+                                    <span class="s1">Human m = </span><span class="s0">new </span><span class="s1">Man(name</span><span class="s0">, </span><span class="s1">family.getFather().getSurname()</span><span class="s0">, </span><span class="s1">String.format(</span><span class="s2">&quot;%s/%s/%s&quot;</span><span class="s0">, </span><span class="s1">day</span><span class="s0">, </span><span class="s1">month</span><span class="s0">, </span><span class="s1">year)</span><span class="s0">, </span><span class="s1">iq)</span><span class="s0">;</span>
+                                    <span class="s1">familyController.adoptChild(family</span><span class="s0">, </span><span class="s1">m)</span><span class="s0">;</span>
+                                <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+                                    <span class="s1">Human w = </span><span class="s0">new </span><span class="s1">Woman(name</span><span class="s0">, </span><span class="s1">family.getFather().getSurname()</span><span class="s0">, </span><span class="s1">String.format(</span><span class="s2">&quot;%s/%s/%s&quot;</span><span class="s0">, </span><span class="s1">day</span><span class="s0">, </span><span class="s1">month</span><span class="s0">, </span><span class="s1">year)</span><span class="s0">, </span><span class="s1">iq)</span><span class="s0">;</span>
+                                    <span class="s1">familyController.adoptChild(family</span><span class="s0">, </span><span class="s1">w)</span><span class="s0">;</span>
+                                <span class="s1">}</span>
+                            <span class="s1">} </span><span class="s0">catch </span><span class="s1">(IndexOutOfBoundsException e) {</span>
+                                <span class="s1">System.out.printf(</span><span class="s2">&quot;Family by %d not found!</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s0">, </span><span class="s1">fId)</span><span class="s0">;</span>
+                            <span class="s1">}</span>
+                        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(subCommand.equals(</span><span class="s2">&quot;3&quot;</span><span class="s1">)) {</span>
+                            <span class="s1">System.out.println(</span><span class="s2">&quot;returning to main menu&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                            <span class="s0">break;</span>
+                        <span class="s1">}</span>
+                    <span class="s0">case </span><span class="s2">&quot;9&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Remove all children over the age of majority (all families remove children over the age of majority - let us assume they have grown up)&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s0">int </span><span class="s1">age = Integer.parseInt(validInput(REG_NUM</span><span class="s0">, </span><span class="s2">&quot;</span><span class="s0">\n\t</span><span class="s2">- enter the age: &quot;</span><span class="s1">))</span><span class="s0">;</span>
+                        <span class="s1">familyController.deleteAllChildrenOlderThen(age)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;All children is deleted&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+                <span class="s1">}</span>
+            <span class="s1">} </span><span class="s0">catch </span><span class="s1">(NumberFormatException ex) {</span>
+                <span class="s1">System.out.println(</span><span class="s2">&quot;NumberFormatException throwed&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">} </span><span class="s0">while </span><span class="s1">(!command.equalsIgnoreCase(</span><span class="s2">&quot;EXIT&quot;</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;End of operations!&quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>
